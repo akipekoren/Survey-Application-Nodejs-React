@@ -11,7 +11,6 @@ export default function Answers(props) {
       );
     } else {
       if (props.multiSelect) {
-
         console.log(e.target.value);
         console.log(e.target.name);
         var myObj = Object.values(props.answersToSurvey).filter(
@@ -86,7 +85,7 @@ export default function Answers(props) {
           onChange={handleChange}
           name={props.id}
           rows="4"
-          cols="70"
+          cols="45"
         ></textarea>
       )}
     </div>

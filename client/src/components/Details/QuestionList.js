@@ -2,9 +2,11 @@ import Question from "./Question";
 import { useState, useEffect } from "react";
 import API from "../../API";
 import { useHistory } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 export default function QuestionList(props) {
   const history = useHistory();
   const [userName, setUserName] = useState("");
+  const [errMessage, setErrMessage] = useState("");
 
   const [answersToSurvey, setAnswersToSurvey] = useState([]);
 
@@ -14,6 +16,23 @@ export default function QuestionList(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!userName) {
+      setErrMessage("User name can not be empty!");
+      return;
+    }
+
+    var flag = false;
+    answersToSurvey.map((answer) => {
+      if (answer.mandatory && answer.answers === "") {
+        flag = true;
+      }
+    });
+
+    if (flag === true) {
+      setErrMessage("Some of the mandatory fields are empty!!");
+      return;
+    }
 
     const resObj = {
       username: userName,
@@ -53,19 +72,26 @@ export default function QuestionList(props) {
     <div className="mt-5">
       <h1
         style={{
-          textAlign: "center",
           fontFamily: "monospace",
           textTransform: "uppercase",
           fontSize: 60,
           color: "#5C5E35",
           textShadow: "0 2px white, 0 3px #777",
-          marginRight: "225px",
+          marginLeft: "355px",
         }}
       >
         {" "}
         <i>{props.title}</i>
       </h1>
-      <div className="mt-5">
+
+      <div className="mt-5" style={{ marginLeft: "355px", maxWidth: "760px" }}>
+        {errMessage ? (
+          <Alert variant="danger" style={{ width: "50%" }}>
+            {errMessage}
+          </Alert>
+        ) : (
+          ""
+        )}
         <form>
           <h4
             style={{ fontFamily: "sans-serif", fontSize: 20, color: "#5C5E35" }}

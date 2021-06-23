@@ -7,6 +7,7 @@ import NavBar from "./components/Nav/NavBar";
 import Header from "./components/Header/Header";
 import ListSurveys from "./components/Response/ListSurveys";
 import Response from "./components/Response/Response";
+import PermissionDeny from "./components/login/PermissionDeny";
 import {
   BrowserRouter as Router,
   Route,
@@ -96,10 +97,7 @@ function App() {
                 </Row>
               </>
             ) : (
-              <div className="justify-content-md-center mt-5 text-center">
-                <h1> You do not have permission to do this!! </h1>
-                <Link to="/login">Login to create survey from here</Link>
-              </div>
+              <PermissionDeny />
             )}
           </Route>
 
@@ -109,10 +107,7 @@ function App() {
                 <Response />
               </>
             ) : (
-              <div className="justify-content-md-center mt-5 text-center">
-                <h1> You do not have permission to do this!! </h1>
-                <Link to="/login">Login to create survey from here</Link>
-              </div>
+              <PermissionDeny />
             )}
           </Route>
 
@@ -126,9 +121,11 @@ function App() {
                 <ListSurveys />
               </>
             ) : (
-              <div className="justify-content-md-center mt-5 text-center">
-                <h1> You do not have permission to do this!! </h1>
-                <Link to="/login">Login to create survey from here</Link>
+              <div
+                className="justify-content-md-center mt-5 text-center"
+                style={{ marginTop: "100px" }}
+              >
+                <PermissionDeny />
               </div>
             )}
           </Route>

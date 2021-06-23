@@ -19,8 +19,6 @@ export default function Detail(props) {
   return (
     <div
       style={{
-        marginLeft: "20px",
-        marginRight: "20px",
         height: "100%",
         border: "1px",
         backgroundColor: "#F2F3DE",

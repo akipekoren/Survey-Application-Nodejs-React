@@ -31,45 +31,56 @@ export default function Response() {
               header={"Responses for " + responses[0].title}
               color="#5E630D"
             />{" "}
-            <ul style={{ listStyleType: "none", marginLeft: "400px" }}>
-              <li style={{ fontSize: "30px" }}>
-                {" "}
-                <b> Username :</b>
-                {responses[index].username}{" "}
-              </li>
-              <br />
-              {responses[index].answers.map((answer, idx) => (
-                <>
-                  <li key={idx}>
+            <div style={{ marginTop: "30px" }}>
+              {" "}
+              <FontAwesomeIcon
+                className="mr-5 fa-2x"
+                style={{ marginLeft: "450px" }}
+                icon={faArrowLeft}
+                onClick={() => {
+                  setIndex(() =>
+                    index > 0 ? index - 1 : responses.length - 1
+                  );
+                }}
+              />
+              <FontAwesomeIcon
+                className=" fa-2x"
+                style={{ marginLeft: "200px" }}
+                icon={faArrowRight}
+                onClick={() => {
+                  setIndex(() =>
+                    index < responses.length - 1 ? index + 1 : 0
+                  );
+                }}
+              />
+              <div style={{ marginTop: "30px" }}>
+                <ul style={{ listStyleType: "none", marginLeft: "400px" }}>
+                  <li style={{ fontSize: "30px" }}>
                     {" "}
-                    <b> Question : {idx + 1}</b>{" "}
-                    {responses[index].questions[idx].name}
-                    <b> Answer : </b>{" "}
-                    {responses[index].answers[idx].answers.split("?").join(" ")}
+                    <b> Username :</b>
+                    {responses[index].username}{" "}
                   </li>
-                </>
-              ))}
-            </ul>
+                  <br />
+                  {responses[index].answers.map((answer, idx) => (
+                    <>
+                      <li key={idx}>
+                        {" "}
+                        <b> Question : {idx + 1}</b>{" "}
+                        {responses[index].questions[idx].name}
+                        <b> Answer : </b>{" "}
+                        {responses[index].answers[idx].answers
+                          .split("?")
+                          .join(" ")}
+                      </li>
+                    </>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </>
         ) : (
           <h1></h1>
         )}
-
-        <FontAwesomeIcon
-          className="mr-5 fa-2x"
-          style={{ marginLeft: "600px" }}
-          icon={faArrowLeft}
-          onClick={() => {
-            setIndex(index - 1);
-          }}
-        />
-        <FontAwesomeIcon
-          className="ml-5 fa-2x"
-          icon={faArrowRight}
-          onClick={() => {
-            setIndex(index + 1);
-          }}
-        />
       </div>
     </>
   );
