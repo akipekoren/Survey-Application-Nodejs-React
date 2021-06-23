@@ -18,6 +18,7 @@ export default function NavBar(props) {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
                 <Nav.Link href="/surveys/create">Create Survey</Nav.Link>
+                <Nav.Link href="/surveys/view-results">View Responses</Nav.Link>
               </Nav>
             </Navbar.Collapse>
             <Navbar.Collapse className="justify-content-end">

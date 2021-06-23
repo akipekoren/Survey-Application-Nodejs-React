@@ -5,6 +5,8 @@ import { LoginForm } from "./components/login/Login";
 import { Row, Container, Col } from "react-bootstrap";
 import NavBar from "./components/Nav/NavBar";
 import Header from "./components/Header/Header";
+import ListSurveys from "./components/Response/ListSurveys";
+import Response from "./components/Response/Response";
 import {
   BrowserRouter as Router,
   Route,
@@ -86,13 +88,42 @@ function App() {
           <Route exact path="/surveys/create">
             {loggedIn ? (
               <>
-                <Header header="Answer the Questions" color="#5E630D" />
-
+                <Header header="Create Questions" color="#5E630D" />
                 <Row>
                   <Col className="text-center">
                     <Create />
                   </Col>
                 </Row>
+              </>
+            ) : (
+              <div className="justify-content-md-center mt-5 text-center">
+                <h1> You do not have permission to do this!! </h1>
+                <Link to="/login">Login to create survey from here</Link>
+              </div>
+            )}
+          </Route>
+
+          <Route exact path="/responses/:id">
+            {loggedIn ? (
+              <>
+                <Response />
+              </>
+            ) : (
+              <div className="justify-content-md-center mt-5 text-center">
+                <h1> You do not have permission to do this!! </h1>
+                <Link to="/login">Login to create survey from here</Link>
+              </div>
+            )}
+          </Route>
+
+          <Route exact path="/surveys/view-results">
+            {loggedIn ? (
+              <>
+                <Header
+                  header="Your surveys and their responses"
+                  color="#5E630D"
+                />
+                <ListSurveys />
               </>
             ) : (
               <div className="justify-content-md-center mt-5 text-center">

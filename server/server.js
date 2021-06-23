@@ -119,6 +119,24 @@ app.post("/api/responses", async (req, res) => {
   }
 });
 
+// GET api/surveys/view-results
+
+app.get("/api/view-results", (req, res) => {
+  if (req.isAuthenticated()) {
+    db.retrieveSurveysAndResponses(req.user.id)
+      .then((surveys) => res.json(surveys))
+      .catch(() => res.status(500).end());
+  } else res.status(401).json({ error: "Unauthenticated user!" });
+});
+
+// GET api/responses
+
+app.get("/api/responses/:id", (req, res) => {
+  db.retrieveResponses(req.params.id)
+    .then((responses) => res.json(responses))
+    .catch(() => res.status(500).end());
+});
+
 // POST /sessions
 // login
 app.post("/api/sessions", function (req, res, next) {

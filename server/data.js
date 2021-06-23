@@ -85,6 +85,50 @@ exports.retrieveSurveys = () => {
   });
 };
 
+exports.retrieveResponses = (surveyid) => {
+  return new Promise((resolve, reject) => {
+    const query =
+      " SELECT * FROM responses INNER JOIN surveys ON surveys.id=responses.surveyid  WHERE responses.surveyid =? ";
+    db.all(query, [surveyid], (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(rows);
+      var responses = rows.map((e) => ({
+        id: e.id,
+        surveyid: e.surveyid,
+        username: e.username,
+        answers: JSON.parse(e.answers),
+        questions: JSON.parse(e.questions),
+        title: e.title,
+      }));
+      resolve(responses);
+    });
+  });
+};
+
+exports.retrieveSurveysAndResponses = (userId) => {
+  return new Promise((resolve, reject) => {
+    var query =
+      "SELECT surveys.id, surveys.title,count(surveyid) as ct FROM surveys LEFT JOIN responses ON surveys.id=responses.surveyid WHERE surveys.user = ? GROUP BY surveys.id";
+
+    db.all(query, [userId], (err, rows) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      console.log(rows);
+      var surveys = rows.map((e) => ({
+        id: e.id,
+        count: e.ct,
+        title: e.title,
+      }));
+      resolve(surveys);
+    });
+  });
+};
+
 // DAO operations for validating users
 
 exports.getUser = (email, password) => {

@@ -6,6 +6,18 @@ async function getSurveys() {
   return surveys;
 }
 
+async function getYourSurveys() {
+  const response = await fetch(url + "/api/view-results");
+  const surveys = await response.json();
+  return surveys;
+}
+
+async function getResponses(id) {
+  const response = await fetch(url + "/api/responses/" + id);
+  const responses = await response.json();
+  return responses;
+}
+
 async function getSurvey(id) {
   const response = await fetch(url + "/api/surveys/" + id);
   const survey = await response.json();
@@ -76,5 +88,7 @@ const API = {
   logOut,
   postSurvey,
   postResponse,
+  getYourSurveys,
+  getResponses,
 };
 export default API;
