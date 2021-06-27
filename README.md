@@ -77,5 +77,7 @@
 
 ## Users Credentials
 
-- username, password (plus any other requested info)
-- username, password (plus any other requested info)
+
+
+- username : admin  password : password
+- username : admin2  password : password
