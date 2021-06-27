@@ -13,17 +13,6 @@
 
 ## API Server
 
-- POST `/api/login`
-  - request parameters and request body content
-  - response body content
-- GET `/api/something`
-  - request parameters
-  - response body content
-- POST `/api/something`
-  - request parameters and request body content
-  - response body content
-- ...
-
 - GET `/api/surveys/:id`
   - id => surveyid
   - response =>  given survey with questions
