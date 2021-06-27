@@ -24,6 +24,45 @@
   - response body content
 - ...
 
+- GET `/api/surveys/:id`
+  - id => surveyid
+  - response =>  given survey with questions
+
+- GET `/api/surveys`
+  -  no request parameters
+  -  response => list of all surveys from the database
+
+- POST `/api/surveys`
+  - request parameters => surveyTitle and questions(JSON format)
+  - response => HTTP 200 OK
+
+- POST `/api/responses`
+  - request parameters=> username, surveyid and answers(JSON format)
+  - response => HTTP 200 OK
+
+- GET `/api/responses/:id`
+  -  id => surveyid
+  -  response => list of all responses to given survey
+
+- GET `/api/view-results`
+  -  no request parameters
+  -  response => list of all surveys and count of responses with logged in admin
+
+- POST `/api/sessions`
+-  request parameters => user information
+-  response => user
+
+- DELETE `/api/sessions/current`
+ - user information
+ - response => HTTP 200 OK
+
+- GET `/api/sessions/current`
+ - user information
+ - response => user
+
+
+
+
 ## Database Tables
 
 - Table `users` - contains xx yy zz
