@@ -3,9 +3,13 @@
 
 ## React Client Application Routes
 
-- Route `/`: page content and purpose
-- Route `/something/:param`: page content and purpose, param specification
-- ...
+
+- Route `/login` : admin login page, ask email and password
+- Route `/surveys` : main page, list of survey titles can be seen and clickable
+- Route `/surveys/:id` : given survey page for user to fill survey params: surveyid
+- Route `/surveys/create` : create survey page, admin only
+- Route `/responses/:id` : see the user responses for given surveyid, admin only, params : surveyid
+- Route `/surveys/view-results` : survey list of logged in admin and count of responses to these surveys, admin only
 
 ## API Server
 
