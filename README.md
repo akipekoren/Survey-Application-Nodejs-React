@@ -42,12 +42,12 @@
   -  response => user
 
 - DELETE `/api/sessions/current`
- - user information
- - response => HTTP 200 OK
+  - user information
+  - response => HTTP 200 OK
 
 - GET `/api/sessions/current`
- - user information
- - response => user
+  - user information
+  - response => user
 
 
 
