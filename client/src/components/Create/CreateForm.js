@@ -17,6 +17,9 @@ export default function CreateForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (answerArray.length === 0) {
+      return;
+    }
     var mulAns = false;
 
     if (multiselect === 0 || multiselect === "0") {

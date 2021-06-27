@@ -48,7 +48,7 @@ export default function Answers(props) {
             {props.answers.map((answer) => (
               <>
                 <li>
-                  <label for="checkid" key={answer}>
+                  <label key={answer}>
                     <input
                       id="checkid"
                       type="checkbox"

@@ -140,7 +140,6 @@ app.get("/api/responses/:id", (req, res) => {
 // POST /sessions
 // login
 app.post("/api/sessions", function (req, res, next) {
-  console.log(req.body);
   passport.authenticate("local", (err, user, info) => {
     if (err) return next(err);
 

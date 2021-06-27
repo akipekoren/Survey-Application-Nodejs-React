@@ -25,22 +25,24 @@ export default function ListSurveys() {
             style={{
               width: "600px",
               height: "80px",
-              background: "#F7F5F5",
+              background: "#F8FF7E",
               border: "1px solid #050505",
               borderRadius: "50px",
               marginBottom: "30px",
             }}
           >
             {" "}
-            <h4 style={{ fontFamily: "fantasy", marginTop: "12px" }}>
+            <h4 style={{ fontFamily: "sans-serif", marginTop: "12px" }}>
               {survey.title}{" "}
             </h4>{" "}
             <i> ( {survey.count} responses)</i>
-            <small>
-              <Link className="ml-3" to={"/responses/" + survey.id}>
-                See the responses
-              </Link>
-            </small>
+            <Link
+              className="ml-3"
+              style={{ fontSize: "15px" }}
+              to={"/responses/" + survey.id}
+            >
+              See the responses
+            </Link>
           </div>
         ))}
       </div>

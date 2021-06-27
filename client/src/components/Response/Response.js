@@ -79,7 +79,9 @@ export default function Response() {
             </div>
           </>
         ) : (
-          <h1></h1>
+          <h1 style={{ marginTop: "120px", textAlign: "center" }}>
+            There is no response recorded for this survey
+          </h1>
         )}
       </div>
     </>

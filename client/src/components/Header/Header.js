@@ -8,7 +8,7 @@ export default function Header(props) {
         background: props.color,
         padding: "25px",
         marginTop: "100px",
-        fontFamily: "fantasy",
+        fontFamily: "sans-serif",
       }}
     >
       <h1 style={{ color: "white" }}>{props.header}</h1>

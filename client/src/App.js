@@ -2,7 +2,7 @@ import Home from "./components/Home/Home";
 import Detail from "./components/Details/Detail";
 import Create from "./components/Create/Create";
 import { LoginForm } from "./components/login/Login";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import NavBar from "./components/Nav/NavBar";
 import Header from "./components/Header/Header";
 import ListSurveys from "./components/Response/ListSurveys";
@@ -13,7 +13,6 @@ import {
   Route,
   Switch,
   Redirect,
-  Link,
 } from "react-router-dom";
 import "./App.css";
 import { useState, useEffect } from "react";

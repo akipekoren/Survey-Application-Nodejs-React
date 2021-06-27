@@ -13,7 +13,7 @@ export default function Survey(props) {
         marginBottom: "30px",
       }}
     >
-      <h4 style={{ fontFamily: "fantasy", marginTop: "12px" }}>
+      <h4 style={{ fontFamily: "sans-serif", marginTop: "12px" }}>
         {props.survey.title}{" "}
       </h4>{" "}
       <i>
