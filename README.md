@@ -38,8 +38,8 @@
   -  response => list of all surveys and count of responses with logged in admin
 
 - POST `/api/sessions`
--  request parameters => user information
--  response => user
+  -  request parameters => user information
+  -  response => user
 
 - DELETE `/api/sessions/current`
  - user information
