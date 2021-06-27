@@ -54,9 +54,10 @@
 
 ## Database Tables
 
-- Table `users` - contains xx yy zz
-- Table `something` - contains ww qq ss
-- ...
+- Table `users` - contains id email name hash
+- Table `surveys` - contains id title questions user
+- Table `responses` - contains id username surverid answers
+
 
 ## Main React Components
 
