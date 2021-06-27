@@ -79,5 +79,5 @@
 
 
 
-- username : admin  password : password
-- username : admin2  password : password
+- username : admin@gmail.com  password : password
+- username : admin2@gmail.com  password : password
