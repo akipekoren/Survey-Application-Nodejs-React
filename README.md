@@ -78,9 +78,9 @@
 ## Users Credentials
 
 
-1 - )
-- username : admin@gmail.com  password : password
-list of Surveys : Euro 2020 Survey, Sports Car Survey, Movies Survey
-2 - )
-- username : admin2@gmail.com  password : password
-list of Surveys : Favourite Season Survey, University Survey
+- 1 - )
+  - username : admin@gmail.com  password : password
+  - list of Surveys : Euro 2020 Survey, Sports Car Survey, Movies Survey
+- 2 - )
+  - username : admin2@gmail.com  password : password
+  - list of Surveys : Favourite Season Survey, University Survey
