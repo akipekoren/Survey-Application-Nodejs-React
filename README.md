@@ -73,7 +73,9 @@
 
 ## Screenshot
 
-![Screenshot](./img/screenshot.jpg)
+![Screenshot1](./img1.png)
+![Screenshot2](./img2.png)
+![Screenshot3](./img3.png)
 
 ## Users Credentials
 
