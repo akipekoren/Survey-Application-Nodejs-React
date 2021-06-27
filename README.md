@@ -61,9 +61,13 @@
 
 ## Main React Components
 
-- `ListOfSomething` (in `List.js`): component purpose and main functionality
-- `GreatButton` (in `GreatButton.js`): component purpose and main functionality
-- ...
+
+- `Navbar` (in `Nav/Navbar.js`) : handles navbar and its components
+- `Login` (in `Login/Login.js`) : handles login operation
+- `Response` (in `Response/Response.js`) : show the responses to a given survey
+- `Home` (in `Home/Home.js`) : show all the recorded surveys in main page
+- `Detail` (in `Details/Detail.js`) : allow user to fill survey
+- `Create` (in `Create/Create.js`) : for survey creation
 
 (only _main_ components, minor ones may be skipped)
 
