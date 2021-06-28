@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function CreateForm(props) {
   const [answerArray, setAnswerArrray] = useState([]);
   const [inputAnswer, setInputAnswer] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleAnswerSubmit = (e) => {
     e.preventDefault();
@@ -16,8 +17,9 @@ export default function CreateForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (answerArray.length === 0) {
+    setErrorMessage("");
+    if (answerArray.length === 0 && props.type === "multi") {
+      setErrorMessage("Please add at least one choice to continue");
       return;
     }
     var mulAns = false;
@@ -110,7 +112,7 @@ export default function CreateForm(props) {
 
             <form className="mt-3">
               <label>
-                Add Answer:
+                Add Choice *:
                 <input
                   className="ml-1"
                   type="text"
@@ -123,11 +125,12 @@ export default function CreateForm(props) {
               </button>
             </form>
 
-            <h6 className="mt-3">Possible Answers : </h6>
+            <h6 className="mt-3">Possible Choices : </h6>
             {answerArray.map((ans) => (
               <li key={ans}>{ans} </li>
             ))}
           </Form.Group>
+          <small style={{ color: "red" }}>{errorMessage}</small>
           <Button variant="success" type="submit" block className="mt-3">
             Create
           </Button>
