@@ -1,5 +1,4 @@
-# Exam #1: "Survey"
-## Student: s287772 IPEKOREN AHMET KAAN
+
 
 ## React Client Application Routes
 
