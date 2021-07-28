@@ -74,7 +74,6 @@ Server -> npm install, nodemon server.js
 - `Detail` (in `Details/Detail.js`) : allow user to fill survey
 - `Create` (in `Create/Create.js`) : for survey creation
 
-(only _main_ components, minor ones may be skipped)
 
 ## Screenshot
 
