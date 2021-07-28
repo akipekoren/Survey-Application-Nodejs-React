@@ -1,4 +1,10 @@
 
+To start application
+
+Client -> npm install, npm start
+Server -> npm install, nodemon server.js
+
+
 
 ## React Client Application Routes
 
