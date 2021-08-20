@@ -45,7 +45,6 @@ passport.deserializeUser((id, done) => {
 app = new express();
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
 
 // custom middleware: check if a given request is coming from an authenticated user
 const isLoggedIn = (req, res, next) => {
