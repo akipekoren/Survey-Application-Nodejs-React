@@ -6,7 +6,8 @@ const session = require("express-session"); // session middleware
 const passport = require("passport");
 const passportLocal = require("passport-local");
 
-const port = 3001;
+const path = require("path");
+const port = process.env.PORT || 3001;
 
 // initialize and configure passport
 passport.use(
