@@ -5,7 +5,7 @@ const db = require("./data.js");
 const session = require("express-session"); // session middleware
 const passport = require("passport");
 const passportLocal = require("passport-local");
-
+const cors = require("cors");
 const path = require("path");
 const port = process.env.PORT || 3001;
 
@@ -45,6 +45,7 @@ passport.deserializeUser((id, done) => {
 app = new express();
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 // custom middleware: check if a given request is coming from an authenticated user
 const isLoggedIn = (req, res, next) => {
