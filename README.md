@@ -1,5 +1,10 @@
-# Exam #1: "Survey"
-## Student: s287772 IPEKOREN AHMET KAAN
+
+To start application
+
+Client -> npm install, npm start
+Server -> npm install, nodemon server.js
+
+
 
 ## React Client Application Routes
 
@@ -69,10 +74,9 @@
 - `Detail` (in `Details/Detail.js`) : allow user to fill survey
 - `Create` (in `Create/Create.js`) : for survey creation
 
-(only _main_ components, minor ones may be skipped)
 
 ## Screenshot
-
+![Screenshot3](./img4.png)
 ![Screenshot1](./img1.png)
 ![Screenshot2](./img2.png)
 ![Screenshot3](./img3.png)
