@@ -66,7 +66,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-//app.use(cors());
+app.use(cors());
 //app.options("*", cors());
 // GET /api/surveys/:id
 
