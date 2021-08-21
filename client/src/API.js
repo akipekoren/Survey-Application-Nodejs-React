@@ -57,7 +57,7 @@ async function getUserInfo() {
 }
 
 async function logIn(credentials) {
-  let response = await fetch(url + "/api/sessions", {
+  let response = await fetch("/api/sessions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
