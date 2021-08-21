@@ -47,7 +47,7 @@ async function postResponse(answer) {
 }
 
 async function getUserInfo() {
-  const response = await fetch("/api/sessions/current");
+  const response = await fetch(url + "/api/sessions/current");
   const userInfo = await response.json();
   if (response.ok) {
     return userInfo;
