@@ -1,4 +1,4 @@
-const url = "http://localhost:3001";
+const url = "http://localhost:3000";
 
 async function getSurveys() {
   const response = await fetch(url + "/api/surveys");
