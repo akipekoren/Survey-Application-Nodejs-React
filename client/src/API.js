@@ -1,31 +1,31 @@
 const url = "http://localhost:3001";
 
 async function getSurveys() {
-  const response = await fetch(url + "/api/surveys");
+  const response = await fetch("/api/surveys");
   const surveys = await response.json();
   return surveys;
 }
 
 async function getYourSurveys() {
-  const response = await fetch(url + "/api/view-results");
+  const response = await fetch("/api/view-results");
   const surveys = await response.json();
   return surveys;
 }
 
 async function getResponses(id) {
-  const response = await fetch(url + "/api/responses/" + id);
+  const response = await fetch("/api/responses/" + id);
   const responses = await response.json();
   return responses;
 }
 
 async function getSurvey(id) {
-  const response = await fetch(url + "/api/surveys/" + id);
+  const response = await fetch("/api/surveys/" + id);
   const survey = await response.json();
   return survey;
 }
 
 async function postSurvey(survey) {
-  const response = await fetch(url + "/api/surveys", {
+  const response = await fetch("/api/surveys", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...survey }),
@@ -36,7 +36,7 @@ async function postSurvey(survey) {
 }
 
 async function postResponse(answer) {
-  const response = await fetch(url + "/api/responses", {
+  const response = await fetch("/api/responses", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...answer }),
@@ -77,7 +77,7 @@ async function logIn(credentials) {
   }
 }
 async function logOut() {
-  await fetch(url + "/api/sessions/current", { method: "DELETE" });
+  await fetch("/api/sessions/current", { method: "DELETE" });
 }
 
 const API = {
